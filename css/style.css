@@ -44,7 +44,7 @@ ul { list-style: none; }
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 120px;
+  height: 125px;
 } 
 .logo-img { height: 85px; width: auto; }.nav-menu { display: flex; align-items: center; gap: 28px; }
 .nav-link {
