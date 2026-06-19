@@ -46,7 +46,7 @@ ul { list-style: none; }
   display: flex; align-items: center; justify-content: space-between;
   height: 70px;
 }
-.logo-img { height: 80px; width: auto; }.nav-menu { display: flex; align-items: center; gap: 28px; }
+.logo-img { height: 100px; width: auto; }.nav-menu { display: flex; align-items: center; gap: 28px; }
 .nav-link {
   color: var(--azul); font-size: 14px; font-weight: 500;
   padding-bottom: 2px; border-bottom: 2px solid transparent;
