@@ -68,7 +68,7 @@ ul { list-style: none; }
    ============================================= */
 .hero {
   min-height: 100vh; padding-top: 70px;
-  background: linear-gradient(150deg, #061e36 0%, #0a3d6b 50%, #0d5299 100%);
+  background: linear-gradient(150deg, rgba(6,30,54,0.92) 0%, rgba(10,61,107,0.88) 50%, rgba(13,82,153,0.85) 100%), url('../images/hero-bg.jpg') center center / cover no-repeat;
   display: flex; align-items: center; position: relative; overflow: hidden;
 }
 .hero::before {
