@@ -5,12 +5,12 @@
 /* HERO DE PÁGINAS INTERNAS */
 .page-hero {
   background: linear-gradient(135deg, #061e36 0%, #0a3d6b 100%);
-  padding: 120px 24px 56px;
+  padding: 160px 24px 60px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  min-height: 280px;
 }
 .page-hero .container {
   display: flex;
