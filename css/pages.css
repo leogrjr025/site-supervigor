@@ -7,6 +7,16 @@
   background: linear-gradient(135deg, #061e36 0%, #0a3d6b 100%);
   padding: 120px 24px 56px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+.page-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .page-hero h1 {
   color: #fff;
