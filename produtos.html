@@ -44,12 +44,12 @@
 
       <!-- NAVEGAÇÃO POR ESPÉCIE -->
       <div class="esp-tabs">
-        <button class="esp-tab ativo" onclick="mostrarEspecie('bovinos-corte')">🐄 Bovinos de Corte</button>
-        <button class="esp-tab" onclick="mostrarEspecie('bovinos-leite')">🥛 Bovinos de Leite</button>
-        <button class="esp-tab" onclick="mostrarEspecie('equinos')">🐎 Equinos</button>
-        <button class="esp-tab" onclick="mostrarEspecie('suinos')">🐖 Suínos</button>
-        <button class="esp-tab" onclick="mostrarEspecie('aves')">🐓 Aves</button>
-        <button class="esp-tab" onclick="mostrarEspecie('caprinos')">🐐 Caprinos</button>
+        <button class="esp-tab ativo" onclick="mostrarEspecie('bovinos-corte', this)">🐄 Bovinos de Corte</button>
+        <button class="esp-tab" onclick="mostrarEspecie('bovinos-leite', this)">🥛 Bovinos de Leite</button>
+        <button class="esp-tab" onclick="mostrarEspecie('equinos', this)">🐎 Equinos</button>
+        <button class="esp-tab" onclick="mostrarEspecie('suinos', this)">🐖 Suínos</button>
+        <button class="esp-tab" onclick="mostrarEspecie('aves', this)">🐓 Aves</button>
+        <button class="esp-tab" onclick="mostrarEspecie('caprinos', this)">🐐 Caprinos</button>
       </div>
 
       <!-- BOVINOS DE CORTE -->
@@ -354,13 +354,26 @@
 
   <script src="js/main.js"></script>
   <script>
-    function mostrarEspecie(id) {
+    function mostrarEspecie(id, el) {
       document.querySelectorAll('.especie-section').forEach(s => s.classList.remove('ativo'));
       document.querySelectorAll('.esp-tab').forEach(t => t.classList.remove('ativo'));
       document.getElementById(id).classList.add('ativo');
-      event.target.classList.add('ativo');
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('ativo');
+      window.location.hash = id;
     }
+
+    // Ao carregar a página, verifica se tem uma aba na URL
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      const secao = hash ? document.getElementById(hash) : null;
+      if (secao) {
+        document.querySelectorAll('.especie-section').forEach(s => s.classList.remove('ativo'));
+        document.querySelectorAll('.esp-tab').forEach(t => t.classList.remove('ativo'));
+        secao.classList.add('ativo');
+        const tab = document.querySelector(`[onclick="mostrarEspecie('${hash}', this)"]`);
+        if (tab) tab.classList.add('ativo');
+      }
+    });
   </script>
 </body>
 </html>
