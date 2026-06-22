@@ -97,3 +97,38 @@
   .post-img { height: 100px; }
   .blog-hero h1 { font-size: 26px; }
 }
+/* PAGINAÇÃO */
+.paginacao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--cinza-bd);
+}
+.pag-atual {
+  background: var(--azul);
+  color: #fff;
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
+.pag-link {
+  background: #fff;
+  color: var(--azul);
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--cinza-bd);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 14px;
+  transition: all 0.2s;
+}
+.pag-link:hover { background: var(--azul); color: #fff; }
+.pag-proxima {
+  color: var(--azul);
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.pag-proxima:hover { color: var(--laranja); }
