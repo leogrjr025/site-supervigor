@@ -228,3 +228,25 @@
   .page-hero { padding: 100px 24px 40px; }
   .page-hero h1 { font-size: 24px; }
 }
+
+/* BREADCRUMB */
+.breadcrumb {
+  padding-top: 125px;
+  padding-bottom: 12px;
+  background: #f0f4f9;
+  border-bottom: 1px solid #dde3ec;
+}
+.breadcrumb .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.breadcrumb a {
+  color: #0a3d6b;
+  font-size: 13px;
+}
+.breadcrumb a:hover { color: #f47920; }
+.breadcrumb span {
+  color: #888;
+  font-size: 13px;
+}
