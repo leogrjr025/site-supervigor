@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigor Confimax – Ficha Técnica – Super Vigor Nutrição Animal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #222;
+      padding: 32px 40px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* BOTÃO IMPRIMIR */
+    .btn-print {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .btn-print button {
+      background: #0a3d6b;
+      color: #fff;
+      border: none;
+      padding: 11px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-print button:hover { background: #061e36; }
+
+    /* CABEÇALHO */
+    .print-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #0a3d6b;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .print-header img { height: 60px; object-fit: contain; }
+    .print-header-info { text-align: right; }
+    .print-header-info h1 { font-size: 20px; color: #0a3d6b; font-weight: 700; }
+    .print-header-info p { font-size: 12px; color: #666; margin-top: 2px; }
+    .print-header-info .codigo {
+      display: inline-block;
+      background: #f47920;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+    }
+
+    /* TAG ESPÉCIE */
+    .especie-tag {
+      display: inline-block;
+      background: #e8f0f9;
+      color: #0a3d6b;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* DESCRIÇÃO */
+    .descricao {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      padding: 14px 16px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #0a3d6b;
+    }
+
+    /* DESTAQUES */
+    .destaques {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .destaque-item {
+      text-align: center;
+      background: #f0f4f9;
+      border-radius: 8px;
+      padding: 14px 10px;
+    }
+    .destaque-item strong {
+      display: block;
+      font-size: 18px;
+      color: #0a3d6b;
+      font-weight: 700;
+    }
+    .destaque-item span {
+      font-size: 11px;
+      color: #666;
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* EMBALAGEM BAR */
+    .embalagem-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: #0a3d6b;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .emb-item { text-align: center; color: #fff; }
+    .emb-item span { display: block; font-size: 11px; opacity: 0.75; margin-bottom: 4px; }
+    .emb-item strong { font-size: 13px; font-weight: 700; }
+
+    /* SEÇÕES */
+    .secao { margin-bottom: 24px; }
+    .secao h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0a3d6b;
+      border-bottom: 2px solid #e0e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* MODO DE USO */
+    .formula {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+    .formula-item {
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 100px;
+    }
+    .formula-item strong { display: block; font-size: 15px; font-weight: 700; }
+    .formula-item span { font-size: 11px; margin-top: 2px; display: block; }
+    .formula-item.laranja { background: #fff3e0; color: #e65100; }
+    .formula-item.azul { background: #e8f0fb; color: #0a3d6b; }
+    .formula-item.verde { background: #e8f5e9; color: #2e7d32; }
+    .formula-mais { font-size: 20px; font-weight: 700; color: #aaa; }
+
+    .atencao-box {
+      background: #fff3e0;
+      border-left: 3px solid #f47920;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #555;
+    }
+    .atencao-box strong { color: #b85a00; display: block; margin-bottom: 4px; }
+
+    /* DIFERENCIAIS */
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .diferencial-item {
+      background: #f0f4f9;
+      border-left: 4px solid #0a3d6b;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .diferencial-item.destaque {
+      border-left-color: #f47920;
+      grid-column: span 2;
+    }
+    .diferencial-item strong {
+      font-size: 13px;
+      color: #0a3d6b;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .diferencial-item.destaque strong { color: #f47920; }
+    .diferencial-item p { font-size: 12px; color: #555; line-height: 1.5; }
+
+    /* AVISO TRANSGÊNICOS */
+    .aviso-transgenico {
+      background: #fff8e1;
+      border-left: 3px solid #f9a825;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #795548;
+    }
+
+    /* RODAPÉ */
+    .print-footer {
+      border-top: 2px solid #0a3d6b;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #666;
+      margin-top: 24px;
+    }
+    .print-footer strong { color: #0a3d6b; }
+
+    @media print {
+      .btn-print { display: none; }
+      body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BOTÃO IMPRIMIR -->
+  <div class="btn-print">
+    <button onclick="window.print()">🖨️ Imprimir / Salvar como PDF</button>
+  </div>
+
+  <!-- CABEÇALHO -->
+  <div class="print-header">
+    <img src="../images/logo-principal.png" alt="Super Vigor Nutrição Animal">
+    <div class="print-header-info">
+      <h1>Vigor Confimax</h1>
+      <p>Ficha Técnica do Produto</p>
+      <span class="codigo">BPV70</span>
+    </div>
+  </div>
+
+  <!-- TAG ESPÉCIE -->
+  <span class="especie-tag">🐄 Bovinos de Corte · Recria e Terminação</span>
+
+  <!-- DESCRIÇÃO -->
+  <div class="descricao">
+    Concentrado para mistura destinado a bovinos de corte em fase de recria e terminação. Formulação com alto teor proteico, minerais e monensina sódica para maximizar o ganho de peso e a eficiência alimentar do rebanho.
+  </div>
+
+  <!-- DESTAQUES -->
+  <div class="destaques">
+    <div class="destaque-item">
+      <strong>25 Kg</strong>
+      <span>Peso líquido</span>
+    </div>
+    <div class="destaque-item">
+      <strong>10–25%</strong>
+      <span>Proporção de uso</span>
+    </div>
+    <div class="destaque-item">
+      <strong>Recria / Terminação</strong>
+      <span>Fase de uso</span>
+    </div>
+  </div>
+
+  <!-- EMBALAGEM BAR -->
+  <div class="embalagem-bar">
+    <div class="emb-item">
+      <span>⚖️ Peso líquido</span>
+      <strong>25 Kg</strong>
+    </div>
+    <div class="emb-item">
+      <span>🏷️ Código</span>
+      <strong>BPV70</strong>
+    </div>
+    <div class="emb-item">
+      <span>🐄 Espécie</span>
+      <strong>Bovinos de Corte</strong>
+    </div>
+    <div class="emb-item">
+      <span>🏢 Fabricante</span>
+      <strong>Super Vigor Nutrição Animal</strong>
+    </div>
+  </div>
+
+  <!-- MODO DE USO -->
+  <div class="secao">
+    <h2>📋 Modo de Uso</h2>
+    <p style="font-size:13px; color:#444; margin-bottom:8px;">Misturar de <strong>10% a 25%</strong> em Milho Integral Moído.</p>
+    <div class="formula">
+      <div class="formula-item laranja">
+        <strong>10–25 Kg</strong>
+        <span>Vigor Confimax</span>
+      </div>
+      <div class="formula-mais">+</div>
+      <div class="formula-item azul">
+        <strong>75–90 Kg</strong>
+        <span>Milho Integral Moído</span>
+      </div>
+      <div class="formula-mais">=</div>
+      <div class="formula-item verde">
+        <strong>100 Kg</strong>
+        <span>Total</span>
+      </div>
+    </div>
+    <div class="atencao-box">
+      <strong>⚠️ Atenção: Produto contém ureia</strong>
+      Fazer adaptação iniciando com 1/3 da nova dieta e gradativamente chegar ao volume total diário em 5 a 7 dias. Uso exclusivo na formulação de rações.
+    </div>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <div class="secao">
+    <h2>⭐ Diferenciais do Produto</h2>
+    <div class="diferenciais-grid">
+      <div class="diferencial-item">
+        <strong>⚡ Monensina Sódica</strong>
+        <p>Aditivo melhorador de desempenho que aumenta a eficiência alimentar e o ganho de peso do rebanho de corte.</p>
+      </div>
+      <div class="diferencial-item">
+        <strong>🛡️ Adsorvente de Micotoxinas</strong>
+        <p>Protege o animal contra os efeitos das micotoxinas presentes nos alimentos, preservando saúde e produtividade.</p>
+      </div>
+      <div class="diferencial-item destaque">
+        <strong>💪 75% de Proteína</strong>
+        <p>Alto teor proteico para suporte ao ganho de peso e desenvolvimento muscular em bovinos de corte nas fases de recria e terminação.</p>
+      </div>
+    </div>
+    <div class="aviso-transgenico">
+      ⚠️ Este produto pode conter milho e soja transgênicos.
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="print-footer">
+    <div>
+      <strong>Super Vigor Nutrição Animal</strong><br>
+      Rua Adílio de Souza Toledo, Distrito Industrial – Guiricema/MG · CEP 36.525-000<br>
+      CNPJ: 26.136.853/0001-49
+    </div>
+    <div style="text-align:right;">
+      📞 (32) 3541-2256<br>
+      <strong>"Nutrição eficiente, resultado constante."</strong>
+    </div>
+  </div>
+
+</body>
+</html>
