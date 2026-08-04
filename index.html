@@ -32,35 +32,49 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="inicio">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-badge">Nutrição Animal de Alta Performance</span>
-      <h1>Saúde e vigor para<br>o seu <span class="text-orange">rebanho</span></h1>
-      <p class="hero-slogan">Nutrição eficiente, resultado constante.</p>
-      <p class="hero-desc">Suplementos e nutrição animal desenvolvidos com tecnologia para maximizar a produtividade dos seus animais com segurança e eficiência.</p>
-      <div class="hero-btns">
-        <a href="#produtos" class="btn-primary">Ver Produtos</a>
-        <a href="https://wa.me/553235412256" target="_blank" class="btn-outline">Fale Conosco</a>
+ <!-- ===== HERO ===== -->
+<section class="hero" id="inicio" style="position:relative; overflow:hidden; min-height:100vh; display:flex; align-items:center;">
+
+  <!-- VÍDEO DE FUNDO -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <source src="images/institucional-site.mp4" type="video/mp4">
+  </video>
+
+  <!-- OVERLAY AZUL (mesmo efeito da foto) -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(150deg, rgba(6,30,54,0.92) 0%, rgba(10,61,107,0.88) 50%, rgba(13,82,153,0.85) 100%); z-index:1;"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="container hero-content" style="position:relative; z-index:2;">
+    <span class="hero-badge">Nutrição Animal de Alta Performance</span>
+    <h1>Saúde e vigor para<br>o seu <span class="text-orange">rebanho</span></h1>
+    <p class="hero-slogan">Nutrição eficiente, resultado constante.</p>
+    <p class="hero-desc">Suplementos e nutrição animal desenvolvidos com tecnologia para maximizar a produtividade dos seus animais com segurança e eficiência.</p>
+    <div class="hero-btns">
+      <a href="#produtos" class="btn-primary">Ver Produtos</a>
+      <a href="https://wa.me/553235412256" target="_blank" class="btn-outline">Fale Conosco</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>+14</strong>
+        <span>Anos de mercado</span>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <strong>+14</strong>
-          <span>Anos de mercado</span>
-        </div>
-        <div class="stat">
-          <strong>+40</strong>
-          <span>Produtos</span>
-        </div>
-        <div class="stat">
-          <strong>+5</strong>
-          <span>Espécies atendidas</span>
-        </div>
+      <div class="stat">
+        <strong>+40</strong>
+        <span>Produtos</span>
+      </div>
+      <div class="stat">
+        <strong>+5</strong>
+        <span>Espécies atendidas</span>
       </div>
     </div>
-  </section>
+  </div>
 
+</section>
   <!-- ===== COTAÇÕES ===== -->
   <section class="cotacoes" id="cotacoes">
     <div class="container">
