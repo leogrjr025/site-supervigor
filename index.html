@@ -248,67 +248,51 @@
     </div>
   </section>
 
-  <!-- ===== BLOG PREVIEW ===== -->
+  <!-- ===== BLOG PREVIEW (automático: mostra as 3 notícias mais recentes de js/noticias.js) ===== -->
   <section class="blog-preview" id="blog">
-  <div class="container">
-    <div class="section-header">
-      <h2>Notícias e Mercado</h2>
-      <p>Atualizado toda segunda-feira com o que há de mais relevante no agronegócio</p>
+    <div class="container">
+      <div class="section-header">
+        <h2>Notícias e Mercado</h2>
+        <p>Atualizado toda segunda-feira com o que há de mais relevante no agronegócio</p>
+      </div>
+      <div class="blog-grid" id="blog-home"></div>
+      <div class="blog-cta">
+        <a href="blog.html" class="btn-secondary">Ver todas as notícias →</a>
+      </div>
     </div>
-    <div class="blog-grid">
+  </section>
+  <script src="js/noticias.js"></script>
+  <script>
+    (function () {
+      function dataParaNumero(d) {
+        var p = d.split('/');
+        return new Date(+p[2], +p[1] - 1, +p[0]).getTime();
+      }
+      function resumo(n) {
+        if (n.resumo) return n.resumo;
+        var t = (n.texto && n.texto[0]) ? n.texto[0].replace(/<[^>]+>/g, '') : '';
+        if (t.length <= 170) return t;
+        return t.slice(0, 170).replace(/\s+\S*$/, '').replace(/[\s.,;:]+$/, '') + '…';
+      }
+      var lista = NOTICIAS.slice().sort(function (a, b) {
+        return dataParaNumero(b.data) - dataParaNumero(a.data);
+      }).slice(0, 3);
 
-      <article class="blog-card">
-        <div class="blog-img" style="background:#f0f4f9; padding:0; overflow:hidden;">
-          <img src="images/noticia-boi-gordo.jpg" alt="Boi gordo mercado junho 2026" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="blog-body">
-          <span class="blog-cat">Mercado</span>
-          <h3>Boi gordo: mercado travado na virada do semestre</h3>
-          <p>Frigoríficos mantêm escalas confortáveis enquanto pecuaristas resistem negociar. Arroba oscila entre R$ 335 e R$ 340 em MT e MS.</p>
-          <div class="blog-meta">
-            <span class="blog-data">22/06/2026</span>
-            <a href="blog.html" class="blog-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-img" style="background:#f0f4f9; padding:0; overflow:hidden;">
-          <img src="images/noticia-leite.jpg" alt="Boletim do Leite" style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="blog-body">
-          <span class="blog-cat">Pecuária · Leite</span>
-          <h3>Boletim do Leite junho/26: preço ao produtor sobe pelo 4º mês seguido</h3>
-          <p>Alta de 10,4% frente a março levou a "Média Brasil" a R$ 2,6584/litro. Exportações de lácteos avançam 45% e custos recuam pela 1ª vez em 2026.</p>
-          <div class="blog-meta">
-            <span class="blog-data">18/06/2026</span>
-            <a href="blog.html" class="blog-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-img azul">
-          <span class="blog-icon">📈</span>
-        </div>
-        <div class="blog-body">
-          <span class="blog-cat">Mercado · Bovinos</span>
-          <h3>Boi gordo bate recorde nominal em junho de 2026</h3>
-          <p>Arroba acumula alta de 12,8% sobre o mesmo período do ano anterior, segundo dados do Cepea/Esalq.</p>
-          <div class="blog-meta">
-            <span class="blog-data">16/06/2026</span>
-            <a href="blog.html" class="blog-link">Ler mais →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-    <div class="blog-cta">
-      <a href="blog.html" class="btn-secondary">Ver todas as notícias →</a>
-    </div>
-  </div>
-</section>
-
+      document.getElementById('blog-home').innerHTML = lista.map(function (n) {
+        var alt = String(n.titulo).replace(/"/g, '&quot;');
+        var imagem = n.imagem
+          ? '<div class="blog-img" style="background:#f0f4f9; padding:0; overflow:hidden;"><img src="images/' + n.imagem + '" alt="' + alt + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>'
+          : '<div class="blog-img ' + (n.cor || 'azul') + '"><span class="blog-icon">' + (n.icone || '📰') + '</span></div>';
+        return '<article class="blog-card">' + imagem +
+          '<div class="blog-body">' +
+            '<span class="blog-cat">' + n.categoria + '</span>' +
+            '<h3>' + n.titulo + '</h3>' +
+            '<p>' + resumo(n) + '</p>' +
+            '<div class="blog-meta"><span class="blog-data">' + n.data + '</span><a href="blog.html" class="blog-link">Ler mais →</a></div>' +
+          '</div></article>';
+      }).join('');
+    })();
+  </script>
   <!-- ===== CTA WHATSAPP ===== -->
   <section class="cta-wpp" id="contato">
     <div class="container cta-inner">
