@@ -14,7 +14,6 @@
 // =====================================================================
 
 const NOTICIAS = [
-
   {
     titulo: `Arroba do boi gordo sobe R$ 5 em 2 regiões do país, mas mercado trava em SP`,
     data: `17/11/2026`,
